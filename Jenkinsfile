@@ -16,7 +16,7 @@ pipeline {
         NEXUS_PASS = 'admin123'
         RELEASE_REPO = 'vprofile-release'
         CENTRAL_REPO = 'vpro-maven-central'
-        NEXUSIP = '172.31.88.118'
+        NEXUSIP = '172.31.86.158'
         NEXUSPORT = '8081'
         NEXUS_REPOSITORY = 'vprofile-release'
 	    NEXUS_GRP_REPO = 'vprofile-maven-group'
@@ -56,8 +56,8 @@ pipeline {
 
           steps {
             withSonarQubeEnv("${SONARSERVER}") {
-               sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=vprofile-rework \
-                   -Dsonar.projectName=vprofile-rework \
+               sh '''${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=vprofile-work \
+                   -Dsonar.projectName=vprofile-work \
                    -Dsonar.projectVersion=1.0 \
                    -Dsonar.sources=src/ \
                    -Dsonar.java.binaries=target/test-classes/com/visualpathit/account/controllerTest/ \
